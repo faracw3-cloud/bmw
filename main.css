@@ -1,25 +1,281 @@
-* {
-    background-color: rgb(215, 214, 214);
+/* PREMIUM BMW AVTOSALON JIDDIY DARK MODE STILLARI */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
 }
 
-.ul {
-    display: flex;
-    gap: 30px;
+body { 
+    background-color: #0d0e12; /* To'q qora va metall ko'rinishidagi fon */
+    color: #ffffff; /* Barcha asosiy matnlar oq rangda */
+    overflow-x: hidden; /* Sahifa yonga qarab siljib ketmasligi uchun */
 }
 
-li {
-    list-style: none;
+/* NAVIGATION HEADER (Saytning eng tepa qismi) */
+.main-header { 
+    display: flex; 
+    justify-content: space-between; /* Elementlarni chekka-chekkaga tekis suradi */
+    align-items: center; 
+    padding: 18px 6%; 
+    background-color: rgba(17, 19, 24, 0.95); 
+    backdrop-filter: blur(10px); /* Orqa fonni silliq xiralashtirish */
+    position: sticky; /* Sahifa pastga tushganda ham tepada yopishib turadi */
+    top: 0; 
+    z-index: 1000; /* Elementlar headerning tagidan o'tishi uchun */
+    border-bottom: 1px solid #1f232d; /* Pastki qismidagi ingichka ajratuvchi chiziq */
 }
 
-a {
-    text-decoration: none;
+.header-left { 
+    display: flex; 
+    align-items: center; 
+    gap: 24px; /* Elementlar orasidagi masofa */
 }
 
-.img {
-    width: 560px;
-    height: 315px;
+.site-logo { 
+    font-size: 24px; 
+    font-weight: 800; 
+    color: #ffffff; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
 }
 
-.winter {
-    justify-content: space-between;
+.site-logo span { 
+    color: #00e5ff; /* Neon ko'k yorug'lik effekti */
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); 
+}
+
+/* Avtomobillar qidiruv paneli */
+.search-container { 
+    position: relative; 
+    width: 400px; 
+}
+
+.search-container input { 
+    width: 100%; 
+    padding: 12px 16px 12px 45px; 
+    border: 1px solid #2c313e; 
+    border-radius: 30px; 
+    background-color: #171a23; 
+    color: #ffffff; 
+    outline: none; 
+    font-size: 14px; 
+    transition: 0.3s; 
+}
+
+.search-container input:focus { 
+    border-color: #00e5ff; 
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); 
+}
+
+.search-icon { 
+    position: absolute; 
+    left: 18px; 
+    top: 13px; 
+    color: #64748b; 
+}
+
+/* Bog'lanish tugmasi */
+.contact-btn { 
+    background-color: #00e5ff; 
+    color: #0d0e12; 
+    border: none; 
+    padding: 12px 24px; 
+    border-radius: 30px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.contact-btn:hover { 
+    background-color: #00b8d4; 
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); 
+    transform: translateY(-2px); 
+}
+
+/* HERO BANNER SECTION (Reklama qismida yuqori sifatli BMW foni) */
+.hero-section { 
+    height: 50vh; 
+    background: linear-gradient(180deg, rgba(13, 14, 18, 0.4) 0%, #0d0e12 100%), url('https://unsplash.com') no-repeat center center/cover; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 0 20px; 
+}
+
+.hero-content h1 { 
+    font-size: 44px; 
+    font-weight: 800; 
+    margin-bottom: 15px; 
+    letter-spacing: -1px; 
+}
+
+.hero-content h1 span { 
+    color: #00e5ff; 
+}
+
+.hero-content p { 
+    font-size: 18px; 
+    color: #94a3b8; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+/* RO'YXAT DOIRASI VA SETKA SYSTEMASI */
+.content-wrapper { 
+    padding: 40px 6%; 
+    max-width: 1440px; 
+    margin: 0 auto; 
+}
+
+.block-title { 
+    font-size: 26px; 
+    font-weight: 700; 
+    margin-bottom: 30px; 
+    position: relative; 
+    padding-left: 15px; 
+}
+
+.block-title::before { 
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    top: 6px; 
+    width: 5px; 
+    height: 24px; 
+    background-color: #00e5ff; 
+    border-radius: 4px; 
+    box-shadow: 0 0 10px #00e5ff; 
+}
+
+.cars-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 50px; 
+}
+
+/* AVTO KARTALARI STILI */
+.car-card { 
+    background-color: #171a23; 
+    border: 1px solid #2c313e; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    cursor: pointer; 
+    transition: 0.3s ease; 
+}
+
+.car-card:hover { 
+    transform: translateY(-10px); 
+    border-color: #00e5ff; 
+    box-shadow: 0 15px 30px rgba(0, 229, 255, 0.15); 
+}
+
+.car-img-box { 
+    width: 100%; 
+    height: 200px; 
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+}
+
+/* 15 TA REALISTIK VA ANIQ ISHLAYDIGAN BMW RASMLARI LINKLARI */
+.img-bmw-m5 { background-image: url('https://unsplash.com'); }
+.img-bmw-m4 { background-image: url('https://unsplash.com'); }
+.img-bmw-m8 { background-image: url('https://unsplash.com'); }
+.img-bmw-x7 { background-image: url('https://unsplash.com'); }
+.img-bmw-i8 { background-image: url('https://unsplash.com'); }
+.img-bmw-xm { background-image: url('https://unsplash.com'); }
+.img-bmw-m3t { background-image: url('https://unsplash.com'); }
+.img-bmw-z4 { background-image: url('https://unsplash.com'); }
+.img-bmw-m2 { background-image: url('https://unsplash.com'); }
+.img-bmw-ix { background-image: url('https://unsplash.com'); }
+.img-bmw-i7 { background-image: url('https://unsplash.com'); }
+.img-bmw-x5m { background-image: url('https://unsplash.com'); }
+.img-bmw-e46 { background-image: url('https://unsplash.com'); }
+.img-bmw-alpina { background-image: url('https://unsplash.com'); }
+.img-bmw-e60 { background-image: url('https://unsplash.com'); }
+
+.car-badge { 
+    position: absolute; 
+    top: 15px; 
+    left: 15px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px); 
+    padding: 6px 14px; 
+    border-radius: 20px; 
+    font-size: 12px; 
+    font-weight: 600; 
+    color: #00e5ff; 
+    border: 1px solid rgba(0, 229, 255, 0.3); 
+}
+
+.car-info { 
+    padding: 24px; 
+}
+
+.car-name { 
+    font-size: 20px; 
+    font-weight: 700; 
+    margin-bottom: 8px; 
+}
+
+.car-specs { 
+    display: flex; 
+    gap: 15px; 
+    color: #94a3b8; 
+    font-size: 13px; 
+    margin-bottom: 20px; 
+    border-bottom: 1px solid #2c313e; 
+    padding-bottom: 15px; 
+}
+
+.car-footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.car-price { 
+    font-size: 22px; 
+    font-weight: 800; 
+    color: #ffffff; 
+}
+
+.buy-btn { 
+    background-color: transparent; 
+    color: #00e5ff; 
+    border: 1px solid #00e5ff; 
+    padding: 10px 20px; 
+    border-radius: 25px; 
+    font-weight: 600; 
+    font-size: 13px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.buy-btn:hover { 
+    background-color: #00e5ff; 
+    color: #0d0e12; 
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3); 
+}
+
+/* CHAT DUMALOQ TUGMASI (Ekranning pastki o'ng tomonida turadi) */
+.floating-chat { 
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px; 
+    background-color: #00e5ff; 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 4px 20px rgba(0, 229, 255, 0.4); 
+    cursor: pointer; 
+    z-index: 1000; 
+    font-size: 26px; 
+    color: #0d0e12; 
 }
